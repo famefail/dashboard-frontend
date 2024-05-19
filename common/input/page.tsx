@@ -15,7 +15,10 @@ const Input = ({ props }: IInput) => {
     const { className, placeholder, prefix, value, setInput } = props
     const { onChangeInput } = InputController({ setInput })
     return (
-        <input onChange={onChangeInput} value={value} className={`${className}  bg-search rounded-lg h-[40px] w-full px-2 border-black border-2 border-solid`} placeholder={placeholder} />
+        <input onChange={onChangeInput} 
+        value={value} 
+        className={`${className} bg-search rounded-lg h-[40px] w-full px-2 border-black border-2 border-solid`} 
+        placeholder={placeholder} />
     )
 }
 

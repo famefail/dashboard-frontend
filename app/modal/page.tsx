@@ -1,8 +1,8 @@
-import Button from '@/common/button/Container';
-import Input from '@/common/input/Container';
+import Button from '@/common/button/page';
+import Input from '@/common/input/page';
 import React from 'react';
 import { ModalController } from './controller';
-import Textarea from '@/common/textarea/Container';
+import Textarea from '@/common/textarea/page';
 
 interface IModal {
   onClickCreate?: React.MouseEventHandler<HTMLButtonElement>

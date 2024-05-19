@@ -1,8 +1,9 @@
-import Button from "@/common/button/Container"
-import Input from "@/common/input/Container"
-import Blog from "../blog/Container"
+"use client";
+import Button from "@/common/button/page"
+import Input from "@/common/input/page"
+import Blog from "../blog/page"
 import { HomepageController } from "./controller"
-import Modal from "../modal/Container"
+import Modal from "../modal/page"
 
 const Homepage = () => {
   const {
@@ -14,7 +15,7 @@ const Homepage = () => {
   } = HomepageController()
 
   return (
-    <div className="mx-4 sm:m-auto sm:grid grid-cols-[1fr_2fr_1fr] pt-8">
+    <div className="mx-4 sm:m-auto sm:grid grid-cols-[1fr_2fr_1fr] pt-8 h-full bg-grey-300">
       {createMode && <Modal onClickCreate={onClickCreate} />}
       <div className="py-2 px-4">
         <div>Home</div>

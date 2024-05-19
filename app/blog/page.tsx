@@ -6,14 +6,24 @@ const Blog = () => {
   return (
     <div className="bg-white border-b-2 border-grey-100">
       <div className="p-5">
-        <div className="flex gap-2 my-4">
-          <Image
-            src={Search}
-            alt={'icon-profile'}
-            width={20}
-            height={20}
-          />
-          <label className="text-grey-300">username</label>
+        <div className="flex justify-between">
+          <div className="flex gap-2 my-4">
+            <Image
+              src={Search}
+              alt={'icon-profile'}
+              width={20}
+              height={20}
+            />
+            <label className="text-grey-300">username</label>
+          </div>
+          <div className="px-4">
+            <button className="px-4">
+              edit
+            </button>
+            <button>
+              delete
+            </button>
+          </div>
         </div>
         <span className=" bg-grey-100 w-max py-1 px-2 rounded-2xl">tag</span>
         <div className="my-4">

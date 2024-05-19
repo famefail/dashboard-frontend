@@ -1,8 +1,9 @@
 "use client"
 
-import Login from "@/components/login/Container";
-import Homepage from "@/components/homepage/Container";
-import Header from "@/components/header";
+import Login from "@/app/login/page";
+import Homepage from "@/app/homepage/page";
+import Header from "./header";
+
 
 
 export default function Home() {

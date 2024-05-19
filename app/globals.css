@@ -17,3 +17,12 @@ p {
   font-weight: 400;
   line-height: 14.52px;
 }
+
+input {
+  border: 1px solid #ccc;
+}
+
+textarea {
+  border: 1px solid #ccc;
+
+}
