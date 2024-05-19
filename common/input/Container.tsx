@@ -1,5 +1,9 @@
+import { Dispatch, SetStateAction } from "react"
+import { InputController } from "./controller"
+
 interface IInput {
     props: {
+        setInput: Dispatch<SetStateAction<string>>
         className?: string
         placeholder?: string
         prefix?: string
@@ -8,10 +12,10 @@ interface IInput {
 }
 
 const Input = ({ props }: IInput) => {
-    const { className, placeholder, prefix, value } = props
-    const setPrefix = `b`
+    const { className, placeholder, prefix, value, setInput } = props
+    const { onChangeInput } = InputController({ setInput })
     return (
-        <input value={value} className={`${className} active:border-none bg-search rounded-lg h-[40px] w-full px-2 border-white border-2 border-solid`} placeholder={placeholder} />
+        <input onChange={onChangeInput} value={value} className={`${className}  bg-search rounded-lg h-[40px] w-full px-2 border-black border-2 border-solid`} placeholder={placeholder} />
     )
 }
 

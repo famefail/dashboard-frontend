@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const Blog = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-white border-b-2 border-grey-100">
       <div className="p-5">
         <div className="flex gap-2 my-4">
           <Image
