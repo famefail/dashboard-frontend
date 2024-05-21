@@ -2,7 +2,13 @@ import Search from "@/public/search.svg"
 import Comment from "@/public/comment.svg"
 import Image from "next/image"
 
-const Blog = () => {
+interface IBlog {
+  props: {
+    viewOnly: boolean
+  }
+}
+const Blog = ({ props }: IBlog) => {
+  const { viewOnly } = props
   return (
     <div className="bg-white border-b-2 border-grey-100">
       <div className="p-5">
@@ -16,14 +22,14 @@ const Blog = () => {
             />
             <label className="text-grey-300">username</label>
           </div>
-          <div className="px-4">
+          {viewOnly && <div className="px-4">
             <button className="px-4">
               edit
             </button>
             <button>
               delete
             </button>
-          </div>
+          </div>}
         </div>
         <span className=" bg-grey-100 w-max py-1 px-2 rounded-2xl">tag</span>
         <div className="my-4">

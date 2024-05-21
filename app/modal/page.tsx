@@ -5,10 +5,14 @@ import { ModalController } from './controller';
 import Textarea from '@/common/textarea/page';
 
 interface IModal {
-  onClickCreate?: React.MouseEventHandler<HTMLButtonElement>
+  props: {
+    onClickCreate?: React.MouseEventHandler<HTMLButtonElement>
+    mode: 'Create' | 'Update'
+  }
 }
 
-const Modal = ({ onClickCreate }: IModal) => {
+const Modal = ({ props }: IModal) => {
+  const { onClickCreate, mode } = props
   const { title,
     setTitle,
     description,
@@ -25,13 +29,13 @@ const Modal = ({ onClickCreate }: IModal) => {
             {/*header*/}
             <div className="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
               <h3 className="text-3xl font-semibold">
-                Create Post
+                {`${mode} Post`}
               </h3>
               <button
-                className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                className="p-1 ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                 onClick={onClickCreate}
               >
-                <span className="text-black h-6 w-6 text-2xl block outline-none focus:outline-none">
+                <span className="text-black h-6 w-6 text-2xl block">
                   ×
                 </span>
               </button>
@@ -39,7 +43,7 @@ const Modal = ({ onClickCreate }: IModal) => {
             {/*body*/}
             <div className="relative p-6">
               <Input props={{ value: title, placeholder: 'title', className: 'h-[44px]', setInput: setTitle }} />
-              <Textarea props={{ value: description,  placeholder: 'What’s on your mind...', setTextarea: setDescription, className:'min-h-[224px] my-4' }} />
+              <Textarea props={{ value: description, placeholder: 'What’s on your mind...', setTextarea: setDescription, className: 'min-h-[224px] my-4' }} />
             </div>
             {/*footer*/}
             <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
